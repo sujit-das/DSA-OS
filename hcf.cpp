@@ -3,7 +3,7 @@
 
 using namespace std;
 
-namespace LibALgo
+namespace LibAlgo
 {
 	int hcf(const int, const int);
 	int hcf_array(const int, const int*);
