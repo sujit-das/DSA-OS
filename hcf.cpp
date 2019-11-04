@@ -1,13 +1,17 @@
-// File usage: g++ hcf.cpp
+// Description: To compute highest common factor
+// Usage: g++ hcf.cpp -o hcf , ./hcf
 #include<iostream>
 
 using namespace std;
 
 namespace LibAlgo
 {
+	typedef int (*FUNCP)(const int, const int);
 	int hcf(const int, const int);
-	int hcf_array(const int, const int*);
+	int lcm(const int, const int);
+	int func_array(const int, const int*);
 
+	// Function to determine HCF(Highest Common Factor) of two integer numbers.
 	int hcf(const int arg1, const int arg2)
 	{
 		cout << "TRACE: hcf( " << "arg1: " <<arg1<<", arg2: "<<arg2<< " )"<<endl;
@@ -18,7 +22,16 @@ namespace LibAlgo
 			hcf(arg2, mod );
 	}
 
-	int hcf_array(const int size, const int* ai)
+	// Function to determine LCM(Lowest Common Multiple) of two integer numbers.
+	int lcm(const int arg1, const int arg2)
+	{
+		cout << "TRACE: lcm( " << "arg1: " <<arg1<<", arg2: "<<arg2<< " )"<<endl;
+		int _hcf = hcf(arg1, arg2 );
+		return ((arg1 * arg2)/_hcf);
+	}
+
+	// Function which execute operation on entire array, starting with first two elements 
+	int func_array(const FUNCP fp, const int size, const int* ai)
 	{
 		if(ai == NULL)
 		{
@@ -35,11 +48,11 @@ namespace LibAlgo
 			int loop, arg1, arg2;
 			for(loop = 0, arg1 = *(ai+loop), arg2 = *(ai+loop+1) ; loop < (size-1); loop++, arg2 = *(ai+loop+1))
 			{
-				arg1 = hcf(arg1,arg2);
+				arg1 = (*fp)(arg1,arg2);
 			}
 			return arg1;
 		}
-	}	
+	}
 }
 
 int main()
@@ -55,9 +68,11 @@ int main()
       {
 	     cin >> *(ai+loop);
       }
-	  
-	  int _hcf = LibAlgo::hcf_array(nN, ai);
-      cout << "HCF: " << _hcf;
+
+      int _hcf = LibAlgo::func_array(LibAlgo::hcf, nN, ai);
+      int _lcm = LibAlgo::func_array(LibAlgo::lcm, nN, ai);
+      cout << "HCF: " << _hcf << endl;
+      cout << "LCM: " << _lcm << endl;
       delete[] ai;
    }
 }
