@@ -1,3 +1,4 @@
+// File usage: g++ hcf.cpp
 #include<iostream>
 
 using namespace std;
