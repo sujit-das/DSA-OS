@@ -15,11 +15,14 @@ namespace LibAlgo
 	int hcf(const int arg1, const int arg2)
 	{
 		cout << "TRACE: hcf( " << "arg1: " <<arg1<<", arg2: "<<arg2<< " )"<<endl;
-		int mod = arg1 % arg2;
-		if( 0 == mod )
-			return arg2;
-		else
-			hcf(arg2, mod );
+		while(arg1 != arg2)
+		{
+			if(arg1 > arg2)
+				return hcf(arg1 - arg2, arg2);
+			else
+				return hcf(arg2 - arg1, arg1);
+		}
+		return arg1;
 	}
 
 	// Function to determine LCM(Lowest Common Multiple) of two integer numbers.
