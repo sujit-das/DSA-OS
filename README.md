@@ -15,8 +15,8 @@ You can use the git config to enable credentials storage in git.
 git config --global credential.helper store
 ---------------------------------
 Command to set git user name and paassword:
-to_sujitdas@cloudshell:~/github/LibAlgo$ git config --global user.name "Sujit Das"
-to_sujitdas@cloudshell:~/github/LibAlgo$ git config --global user.email "to.sujitdas@gmail.com"
+git config --global user.name "Sujit Das"
+git config --global user.email "to.sujitdas@gmail.com"
 ---------------------------------
 Command to clone: git clone git@github.com:sujit-das/LibAlgo.git
 
