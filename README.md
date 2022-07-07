@@ -1,3 +1,4 @@
+This is essentially a help file which includes generic and source code specific information
 #General Tips
 How to create SSH keys
 ----------------------
