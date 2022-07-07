@@ -21,4 +21,4 @@ git config --global user.email "to.sujitdas@gmail.com"
 Command to clone: git clone git@github.com:sujit-das/LibAlgo.git
 
 # LibAlgo
-To compile: c++ <file_name> 
+Command to compile c++ source code: c++ <file_name> 
