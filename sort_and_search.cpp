@@ -12,7 +12,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Moonlight; if not, see <http://www.gnu.org/licenses/>.
+ * along with this software; if not, see <http://www.gnu.org/licenses/>.
  */
 
 #include<stdio.h>
