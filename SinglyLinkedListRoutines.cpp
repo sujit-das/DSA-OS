@@ -38,8 +38,8 @@ void printList(NodePtr n)
     cout << endl;
 }
 
-// Insert in the beginning of the linked list
-void insertBeg(NodePtr &head, int element)
+// This function inserta in the front of the given node
+void insertInBeggining(NodePtr &head, int element)
 {
     NodePtr new_node = new Node;
     new_node->data = element;
@@ -47,8 +47,9 @@ void insertBeg(NodePtr &head, int element)
     head = new_node;
 }
 
-// Insert at the end of the linked list
-void insertEnd(NodePtr &head, int element)
+// This function inserts at the end of the linked list
+// starting from the given node
+void insertAtEnd(NodePtr &head, int element)
 {
     NodePtr new_node = new Node;
     new_node->data = element;
@@ -66,20 +67,21 @@ void insertEnd(NodePtr &head, int element)
     }
 }
 
-// Delete from the beginning of the linked list
-void deleteBeg(NodePtr &head)
+// This function deletes the current node of the linked list
+void deleteCurrentNode(NodePtr &current)
 {
-    if(head != nullptr)
+    if(current != nullptr)
     {
-        NodePtr old_head = head;
-        head = head->next;
-        delete old_head;
-        old_head = nullptr;
+        NodePtr copy_current = current;
+        current = current->next;
+        delete copy_current;
+        copy_current = nullptr;
     }
 }
 
-// Delete from the end of the linked list
-void deleteEnd(NodePtr &head)
+// This function deletes the last node of the linked list
+// starting from the given node
+void deleteLastNode(NodePtr &head)
 {
     if(head != nullptr)
     {
@@ -101,8 +103,8 @@ void deleteEnd(NodePtr &head)
     }
 }
 
-// Delete next of the node passed as argument
-void deleteNext(NodePtr current)
+// This function deletes the next node of the argument node in the linked list
+void deleteNextNode(NodePtr current)
 {
     if((current != nullptr) && (current->next != nullptr))
     {
@@ -112,6 +114,10 @@ void deleteNext(NodePtr current)
     }
 }
 
+// This function searches for element in the linked list starting from the given node
+// If found, it provides address of the matching node and its previous node.
+// If the matching node is the head-node, the previous node is expected to be nullptr
+// If not found, nullptr is retuned in both loc and prev
 void searchList(NodePtr head, int element, NodePtr &prev, NodePtr &loc)
 {
     prev = nullptr;
@@ -149,6 +155,24 @@ void searchList(NodePtr head, int element, NodePtr &prev, NodePtr &loc)
         cout << "Invalid list" << endl;
 }
 
+// This function deletes the node whose data matches with the argument.
+// The list starting from the given node is considered as input list
+void deleteItemInNode(NodePtr &current,  int element)
+{
+    NodePtr prev = nullptr, loc = nullptr;
+    searchList(current, element, prev, loc);
+
+    if(loc != nullptr)
+    {
+        if(prev != nullptr)
+            prev->next = loc->next;
+        else
+            current = loc->next;
+        delete (loc);
+    }
+}
+
+// Test function
 int main()
 {
     cout<<"Hello Linked List" << endl;
@@ -156,34 +180,34 @@ int main()
     
     for (int i = 10; i >= 1; i--)
     {
-        insertEnd(head, i);
+        insertAtEnd(head, i);
     }
 
     printList(head);
     
     for (int i = 11; i <= 20; i++)
     {
-        insertBeg(head, i);
+        insertInBeggining(head, i);
     }
 
     printList(head);
 
-    deleteBeg(head);
+    deleteCurrentNode(head);
     printList(head);
 
-    deleteEnd(head);
+    deleteLastNode(head);
     printList(head);
 
-    deleteNext(head); 
+    deleteNextNode(head); 
     printList(head);
 
-    deleteNext(head->next->next->next);
+    deleteNextNode(head->next->next->next);
     printList(head);
 
-    deleteBeg(head->next->next->next);
+    deleteCurrentNode(head->next->next->next);
     printList(head);
 
-    deleteEnd(head->next->next->next);
+    deleteLastNode(head->next->next->next);
     printList(head);
 
     NodePtr prev = nullptr, loc = nullptr;
@@ -192,8 +216,19 @@ int main()
     searchList(head, 3, prev, loc);
     searchList(head, 20, prev, loc);
     searchList(nullptr, 2, prev, loc);
+    
+    deleteItemInNode(head,13);
+    printList(head);
+
+    deleteItemInNode(head,3);
+    printList(head);
+
+    deleteItemInNode(head,19);
+    printList(head);
+
+    deleteItemInNode(head,-19);
+    printList(head);
+
     cout << "Good Bye Linked List" << endl;
     return 0;
 }
-
-
