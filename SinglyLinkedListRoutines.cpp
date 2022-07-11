@@ -31,6 +31,7 @@ typedef Node* NodePtr;
 // starting from the given node
 void printList(NodePtr n)
 {
+    cout << "Linked List: ";
     while (n != NULL) {
         cout << n->data << " ";
         n = n->next;
@@ -172,6 +173,84 @@ void deleteItemInNode(NodePtr &current,  int element)
     }
 }
 
+// This function returns address of middle node of the linked List
+// starting from the node passed as an argument
+NodePtr findMidOfList(NodePtr head)
+{
+    NodePtr moveBy1 = head, moveBy2 = head;
+    while(moveBy1 != nullptr && moveBy2 != nullptr && moveBy2 ->next !=nullptr && moveBy2 ->next->next !=nullptr)
+    {
+        moveBy1 = moveBy1->next;
+        moveBy2 = moveBy2->next->next;
+    }
+    return moveBy1;
+}
+
+// This function swap node1 with node2 keeping the linklist as intended.
+void swapNode(NodePtr &node1, NodePtr &node1_prev, NodePtr &node2, NodePtr &node2_prev)
+{
+    cout << "ENTRY :: node1 = " << node1->data << " node2_prev = " << node2_prev->data << " node2 = " << node2->data << endl;
+    if(node1_prev == nullptr)
+    {
+        cout << "node1_prev is nullptr" << endl;
+        NodePtr backup_node2_next = node2->next;
+
+        node2->next = node1->next;
+
+        node2_prev->next = node1;
+        node1->next = backup_node2_next;
+    }
+    else
+    {
+        cout << "node1_prev is NOT nullptr" << endl;
+        cout << "node1_prev = " << node1_prev->data << endl;
+        NodePtr backup_node2_next = node2->next;
+
+        node1_prev->next = node2;
+        node2->next = node1->next;
+
+        node2_prev->next = node1;
+        node1->next = backup_node2_next;
+    }
+
+    NodePtr tmp = node1;
+    node1 = node2;
+    node2 = tmp;
+    cout << "EXIT :: node1 = " << node1->data << " node2_prev = " << node2_prev->data << " node2 = " << node2->data << endl;
+}
+
+// This function sorts(in ascending order) the given linked list
+// starting from the node passed as an argument, based on data field of the node
+void sortList(NodePtr &head)
+{
+    NodePtr current1      = head;
+    NodePtr current1_prev = nullptr;
+    while(current1 != nullptr && current1->next != nullptr)
+    {
+        NodePtr current2 = current1->next;
+        NodePtr current2_prev = current1;
+        while(current2 != nullptr)
+        {
+            if(current1->data > current2->data)
+            {
+                // Node Swap
+                //swapNode(current1, current1_prev, current2, current2_prev);
+                
+                // Data Swap
+                int temp = current1->data;
+                current1->data = current2->data;
+                current2->data = temp;
+            }
+            current2_prev = current2;
+            current2 = current2->next;
+        }
+        
+        //printList(head);
+        current1_prev = current1;
+        current1 = current1->next;
+    }
+}
+
 // Test function
 int main()
 {
@@ -182,18 +261,31 @@ int main()
     {
         insertAtEnd(head, i);
     }
-
     printList(head);
+
+    sortList(head);
+    printList(head);
+
+    NodePtr mid = findMidOfList(head);
+    cout << "Middle of the list: " << mid->data << endl;
     
     for (int i = 11; i <= 20; i++)
     {
         insertInBeggining(head, i);
     }
-
     printList(head);
+
+    sortList(head);
+    printList(head);
+
+    mid = findMidOfList(head);
+    cout << "Middle of the list: " << mid->data << endl;
 
     deleteCurrentNode(head);
     printList(head);
+
+    mid = findMidOfList(head);
+    cout << "Middle of the list: " << mid->data << endl;
 
     deleteLastNode(head);
     printList(head);
@@ -232,3 +324,4 @@ int main()
     cout << "Good Bye Linked List" << endl;
     return 0;
 }
+
