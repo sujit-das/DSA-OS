@@ -48,7 +48,7 @@ Sample o/p => 100
 
 Remove all duplicate elements from a given array
 
-## swapToNumbers.c
+## SwapToNumbers.c
 
 Swap two numbers without using a third variable. It implements two possible methods, one using arithmatic operator and another one using BITWISE XOR operator
 
