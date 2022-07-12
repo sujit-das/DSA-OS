@@ -46,9 +46,17 @@ Sample o/p => 100
               
 ## RemoveDuplicateInArray.c
 
-Remove all duplicate elements from a given array
+This program removea all duplicate elements from a given array
 
 ## SwapToNumbers.c
 
-Swap two numbers without using a third variable. It implements two possible methods, one using arithmatic operator and another one using BITWISE XOR operator
+This program swaps two numbers without using a third variable. It implements two possible methods, one using arithmatic operator and another one using BITWISE XOR operator
+
+## StackUsingLinkedList.cpp
+
+This program implements a stack using linkedlist to store data elements. It implements stack creation, push and pop operations
+
+## SinglyLinkedListRoutines.cpp
+
+This program implements few general routines of a singly linked lists, namely methods to insert in the beginning, insert at the end, delete the current node, delete the last node, delete next node, print a linked list, find the middle node of a linked list, search an item in the list, delete an item from the list, sort a linked list etc.
 
