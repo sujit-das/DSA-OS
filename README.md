@@ -29,9 +29,17 @@ Command to clone: git clone git@github.com:sujit-das/LibAlgo.git
  
 # DSA-OS
 
+## CppVersion.cpp
+
+Demonstrates the usage of compiler defined macros to retrieve the version of cpp compiler version
+
 ## HCFandLCM.cpp
 
 This program implements two methods, one to compute Highest Common Factor and another one to compute Lowest Common Multiple.
+
+## Learn.c
+
+Demonstrates the scope and life time of a static variable
 
 ## MultithreadPrintf.c
 
