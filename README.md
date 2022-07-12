@@ -60,3 +60,11 @@ This program implements a stack using linkedlist to store data elements. It impl
 
 This program implements few general routines of a singly linked lists, namely methods to insert in the beginning, insert at the end, delete the current node, delete the last node, delete next node, print a linked list, find the middle node of a linked list, search an item in the list, delete an item from the list, sort a linked list etc.
 
+## HCF_and_LCM.cpp
+
+This program implements two methods, one to compute Highest Common Factor and another one to compute Lowest Common Multiple.
+
+## ProducerConsumer.cpp
+
+This program simulates producer-consumer problem in multithreaded environment. It has one producer thread and two consumer threads and it uses mutex for synchronization between thse threads.
+
