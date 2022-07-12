@@ -1,4 +1,4 @@
-This is essentially a help file which includes generic and source code specific information
+This is essentially a help file which includes generic and this repository specific information
 
 # General Tips
 
