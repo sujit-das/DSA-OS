@@ -27,6 +27,6 @@ Command to clone: git clone git@github.com:sujit-das/LibAlgo.git
 
 Command: c++ <file_name> 
 
-# DSAandOS-DoItYourself
+# DSA-OS
 
 
