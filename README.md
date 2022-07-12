@@ -29,4 +29,8 @@ Command: c++ <file_name>
 
 # DSA-OS
 
+## MultithreadPrintf.c
+
+This program prints numbers from two different threads in such a way that one print from a thread will always be followed by a print from the another thread.
+That means no consecutive prints will be from the same thread
 
