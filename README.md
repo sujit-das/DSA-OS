@@ -33,6 +33,10 @@ Command to clone: git clone git@github.com:sujit-das/LibAlgo.git
 
 Demonstrates the usage of compiler defined macros to retrieve the version of cpp compiler version
 
+## Graph.cpp
+
+This implements graph initilization using adjacency matrix, BFS and DFS traversal
+
 ## HCFandLCM.cpp
 
 This program implements two methods, one to compute Highest Common Factor and another one to compute Lowest Common Multiple.
