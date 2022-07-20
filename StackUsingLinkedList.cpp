@@ -20,10 +20,11 @@
 
 using namespace std;
 
-struct list
+class list
 {
-    int element;
-    struct list* link;
+    public:
+        int element;
+        list* link;
 };
 
 class stack
