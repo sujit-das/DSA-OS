@@ -60,6 +60,10 @@ Sample o/p => 100
               ...
               , where numbers of 100 range get printed from one thread and numbers of 200 range get printed from the other thread.
 
+## MultithreadPrintf.cpp
+
+Functionality wise, this program does not differ from its c version. But this program demonstrates synchronization between multiple thereads
+
 ## ProducerConsumer.cpp
 
 This program simulates producer-consumer problem in multithreaded environment. It has one producer thread and two consumer threads and it uses mutex for synchronization between thse threads.
