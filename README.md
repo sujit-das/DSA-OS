@@ -33,6 +33,12 @@ Command to clone: git clone git@github.com:sujit-das/LibAlgo.git
 
 Demonstrates the usage of compiler defined macros to retrieve the version of cpp compiler version
 
+
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+<div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="sujitd" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/sujitd?trk=profile-badge">Sujit Das</a></div>
+              
 ## Graph.cpp
 
 This implements graph initilization using adjacency matrix, BFS and DFS traversal
@@ -91,3 +97,12 @@ This program implements a stack using linkedlist to store data elements. It impl
 ## SwapToNumbers.c
 
 This program swaps two numbers without using a third variable. It implements two possible methods, one using arithmatic operator and another one using BITWISE XOR operator
+
+
+
+
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+<div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="sujitd" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/sujitd?trk=profile-badge">Sujit Das</a></div>
+
